@@ -7,17 +7,17 @@ choice = ''
 while choice != 'n':
 	number_roun = int(input("How many rounds: "))
 
-	pw = 0
+	player_wins = 0
 
 	ai = 0
 
-	roun = 0
+	rounds = 0
 
 	while roun < number_roun:
-		p1 = input("Tanlang: ").lower()
+		player = input("Choose: ").lower()
 		roun +=1
 		num = randint(1,3)
-		print(f"Round: #{roun}")
+		print(f"Round: #{rounds}")
 		if num == 1:
 			move='rock'
 		elif num == 2:
@@ -25,96 +25,41 @@ while choice != 'n':
 		else:
 			move = 'qaychi'
 		print(f"Ai has chosen {move}")
-		if move == p1:
+		if move == player:
 			print("Draw")
 
-		elif move == 'rock' and p1 == 'paper':
+		elif move == 'rock' and player == 'paper':
 			print("Player win")
 			pw +=1
 
-		elif move == 'rock' and p1 =='qaychi':
+		elif move == 'rock' and player =='scissors':
 			print("AI win")
 			ai +=1
 
-		elif move == 'paper' and p1 == 'rock':
+		elif move == 'paper' and player == 'rock':
 			print("AI win")
 			ai +=1
 
-		elif move == "paper" and p1 == 'qaychi':
+		elif move == "paper" and player == 'scissors':
 			print("Player win")
 			pw +=1
 
-		elif move == 'qaychi' and p1 == 'rock':
+		elif move == 'scissors' and player == 'rock':
 			print("Player win")
 			pw +=1
 
-		elif move == 'qaychi' and p1 == 'paper':
+		elif move == 'scissors' and player == 'paper':
 			print("AI win")
 			ai +=1
 
-		print(f"Total: {pw}:{ai}")
+		print(f"Total: {player_wins}:{ai}")
 		
 
-	if pw > ai:
-		print(f"Overall Player wins: {pw}:{ai}!")
+	if player_wins > ai:
+		print(f"Overall Player wins: {player_wins}:{ai}!")
 	elif pw == ai:
-	    print(f"Overall Draw: {pw}:{ai}!!!")
+	    print(f"Overall Draw: {player_wins}:{ai}!!!")
 	else:
-	    print(f"Overall Computer wins: {pw}:{ai}!")
+	    print(f"Overall Computer wins: {player_wins}:{ai}!")
 
 	choice = input("Do you want to play again (y/n): ")
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-from random import randint
-# i = 0
-
-# while i < 100:
-	
-# 	if i%2!=0:
-# 		print(i)
-# 	i+=1
-
-# for i in range(0,30,2):
-# 	print(i)
-
-num = randint(1,1000)
-
-my = 0
-
-ron = 0
-
-while num != my:
-	my = int(input("Son kiriting: "))
-	if my == num:
-		print("Topdiz :)")
-		print(num)
-		
-	elif my <num:
-		print("Son kichkina :(")
-	elif my >num:
-		print("Son katta :(")
-
-	ron +=1
-print(f"{ron} urinishda topdiz :( ")
